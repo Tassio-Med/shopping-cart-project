@@ -25,6 +25,6 @@ describe('1 - Teste a função fecthProducts', () => {
   });
 
   it('verifica se ao chamar fetchProducts() e não tiver argumento, retorna um erro com a mensagem "You must provide an url"', () => {
-    expect(fetchProducts()).resolves.toEqual(new Error('You must provide an url')); // 'Se a promessa é obrigatória, o teste automaticamente falhar.'
+    expect(fetchProducts()).rejects.toEqual(new Error('You must provide an url')); // 'Se a promessa é obrigatória, o teste automaticamente falhar.'
   });
 });
