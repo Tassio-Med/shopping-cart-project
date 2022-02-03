@@ -69,6 +69,7 @@ const throughItem = async () => {
       image: product.thumbnail,
       salePrice: product.price,
     };
+    
     items.appendChild(createProductItemElement(obj));
     const btnAdd = document.querySelectorAll('.item__add');
     btnAdd.forEach((button) => {
