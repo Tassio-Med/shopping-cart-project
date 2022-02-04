@@ -1,4 +1,4 @@
-const fetchProducts = require('./helpers/fetchProducts');
+import fetchProducts from './helpers/fetchProducts';
 
 const cartItem = document.querySelector('.cart_items');
 
@@ -50,7 +50,7 @@ function createCartItemElement({ sku, name, salePrice }) {
 // Esta função abaixo foi resolvida com ajuda da monitoria da Ellen Santos;
 
 const addItem = async (param) => {
-  const cartItems = document.getElementsByClassName('.cart__items');
+  const cartItems = document.querySelector('.cart__items');
   const skuElement = param.target.parentNode.firstChild.innerText;
   const item = await fetchItem(skuElement);
   const obj = {
@@ -64,7 +64,7 @@ const addItem = async (param) => {
 // Esta função abaixo foi resolvida com ajuda da monitoria da Ellen Santos;
 
 const throughItem = async () => { 
-  const items = document.getElementsByClassName('.items');
+  const items = document.querySelector('.items');
   const products = await fetchProducts('computador');
   products.results.forEach((product) => {
     const obj = {
