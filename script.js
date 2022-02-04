@@ -1,5 +1,3 @@
-import fetchProducts from './helpers/fetchProducts';
-
 const cartItem = document.querySelector('.cart_items');
 
 function createProductImageElement(imageSource) {
@@ -34,9 +32,7 @@ function createProductItemElement({ sku, name, image }) {
 
 function cartItemClickListener(event) {
   // coloque seu código aqui
-  const cartList = document.querySelector('.cart_items');
-  const element = event.target;
-  cartList.removeChild(element);
+  event.target.remove();
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
