@@ -1,5 +1,7 @@
 const fetchProducts = require('./helpers/fetchProducts');
 
+const cartItem = document.querySelector('.cart_items');
+
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -45,7 +47,7 @@ function createCartItemElement({ sku, name, salePrice }) {
   return li;
 }
 
-// Daqui para baixo, as funções foram resolvidas com ajuda da monitoria da Ellen Santos
+// Esta função abaixo foi resolvida com ajuda da monitoria da Ellen Santos;
 
 const addItem = async (param) => {
   const cartItems = document.getElementsByClassName('.cart__items');
@@ -58,6 +60,8 @@ const addItem = async (param) => {
   };
   cartItems.appendChild(createCartItemElement(obj));
 };
+
+// Esta função abaixo foi resolvida com ajuda da monitoria da Ellen Santos;
 
 const throughItem = async () => { 
   const items = document.getElementsByClassName('.items');
@@ -79,5 +83,11 @@ const throughItem = async () => {
 };
 
 window.onload = async () => {
-  await throughItem();
+  throughItem();
+  if (localStorage.getItem('cartItem')) {
+    const save = getSavedCartItems('cartItems'); 
+    cartItem.inneHTML = save;
+    const list = document.querySelectorAll('li');
+    list.forEach((li) => li.addEventListener('click', cartItemClickListener));
+  }
 };
