@@ -6,6 +6,7 @@ const fetchProducts = async (searchItem) => {
   const data = await response.json();
   return data;
 };
+fetchProducts('computador');
 
 if (typeof module !== 'undefined') {
   module.exports = {
