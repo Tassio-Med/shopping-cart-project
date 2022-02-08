@@ -2,9 +2,9 @@ const cartClass = document.querySelector('.cart__items'); // levar para a lista 
 
 function sum() {
   let amount = 0;
-  const getItem = document.querySelectorAll('.cart__item');
+  const getItem = document.querySelectorAll('.cart__item'); 
   getItem.forEach((item) => {
-    const obj = item.innerText.split(' ');
+    const obj = item.innerText.split(' '); // As linhas 7 e 8, consegui reslver apenas com ajuda da função do Gustavo Santos, Turma 19-B
     const indObj = obj.slice(-1)[0].slice(1);
     amount += Number(indObj);
   });
@@ -51,6 +51,8 @@ function createCartItemElement({ sku, name, salePrice }) {
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
+
+// As funções fetchProdList e fetchItem List consegui resolver apenas com ajuda da monitoria da Ellen
 
 const fetchProdList = async () => { 
   const item = document.querySelector('.items');
